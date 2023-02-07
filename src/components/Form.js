@@ -12,9 +12,7 @@ function Form({todos, setTodos}) {
     const nextId = useRef(3)
 
     const onChangeHandler=(event)=>{
-        
         const {value, name} = event.target 
-
         setTodo({...todo, [name]: value, id: nextId.current})
         nextId.current++ 
     }
@@ -29,7 +27,7 @@ function Form({todos, setTodos}) {
             <div className='input_container'>
                 <label>제목</label>
                 
-                <input type='text' name="title" onChange={onChangeHandler} value={todo.title} required/> 
+                <input type='text' name="title" onChange={onChangeHandler} value={todo.title}/> 
                 <label>내용</label>
                 <input type='text' name="body" onChange={onChangeHandler} value={todo.body}/>
             </div>

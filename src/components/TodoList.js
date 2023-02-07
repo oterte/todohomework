@@ -5,7 +5,6 @@ import Form from './Form'
 import List from './List'
 
 function TodoList() {
-    // 자식컴포넌트들끼리의 정보 교환을 위해 공통된 상위 컴포넌트인 TodoList에서 넘겨줄 useState 선언(포장지라고 생각하기)
     const [todos, setTodos] = useState([
         {
             id: 1,

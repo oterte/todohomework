@@ -5,13 +5,16 @@ import Todo from './Todo'
 function List({todos, setTodos}) {
     // 다른 형제 컴포넌트들의 event에 의해 부모컴포넌트에서 수정된 props들을 넘겨 받는다.
 
+    // 
     const onDeleteHandler = (selectedId) => {
-        const remainedTodos = todos.filter((todo)=>{
+        const rest = todos.filter((todo)=>{
             return todo.id !== selectedId
         })
-        setTodos(remainedTodos)
+        setTodos(rest)
     }
 
+    // 배열의 요소를 원하는 규칙에 따라 새로운 배열을 생성하여 그 배열을 setTodos에 지정
+    // id가 같다면 isDone값을 반전시킨 배열을, 다르다면 그대로를 반환
     const onCompleteHandler = (selectedId) =>{
         const newTodos = todos.map((todo)=>{
             if (todo.id === selectedId) {
